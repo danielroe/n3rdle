@@ -4,7 +4,7 @@
     <Title>n3rdle</Title>
     <Meta
       name="description"
-      content="A tiny, incomplete clone of Wordle for a live-coding session at Vue.js Nation."
+      content="A tiny, incomplete clone of Wordle built in Nuxt 3 for a live-coding session at Vue.js Nation."
     />
     <header>
       <nav>
