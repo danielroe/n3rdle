@@ -7,6 +7,6 @@
       live-coding session at
       <a href="https://vuejsnation.com/">Vue.js Nation</a>.
     </p>
-    <NuxtLink to="/game" role="button">Start a new game</NuxtLink>
+    <NuxtLink to="/game" role="button">Play game</NuxtLink>
   </section>
 </template>
