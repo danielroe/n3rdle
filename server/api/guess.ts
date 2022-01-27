@@ -11,7 +11,7 @@ const decode = (state = '[]'): GameState => JSON.parse(state)
 const encode = (state: GameState): string => JSON.stringify(state)
 
 export default defineHandle(async (req, res) => {
-  const { guess } = await useBody(req)
+  const guess = (await useBody(req)).guess?.toLowerCase()
 
   if (!guess || guess.length !== 5) {
     return createError({
