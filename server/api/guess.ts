@@ -29,7 +29,10 @@ export default defineHandle(async (req, res) => {
 
   const state: GameState = decode(useCookie(req, 'state'))
   state.push([guess, generateHint(word, guess)])
-  setCookie(res, 'state', encode(state))
+  setCookie(res, 'state', encode(state), {
+    path: '/',
+    maxAge: 60 * 60 * 24,
+  })
 
   return state
 })
