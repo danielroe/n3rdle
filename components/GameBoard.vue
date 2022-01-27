@@ -7,6 +7,11 @@ const hintMap = {
   1: 'bg-yellow-400 text-black',
   2: 'bg-green-700 text-white',
 }
+const description = {
+  0: 'is not in the word.',
+  1: 'is in the word, but not at the location you picked.',
+  2: 'is in exactly the right location',
+}
 </script>
 
 <template>
@@ -19,6 +24,9 @@ const hintMap = {
           :class="hintMap[hint[i]]"
         >
           {{ letter }}
+          <span class="sr-only">
+            {{ description[hint[i]] }}
+          </span>
         </span>
       </li>
     </ul>
