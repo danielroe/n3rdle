@@ -20,7 +20,10 @@
       <NuxtPage />
     </main>
     <footer>
-      <small>Made with ❤️</small>
+      <small>
+        Made with ❤️
+        <a href="https://github.com/danielroe/n3rdle">Contributions welcome</a>
+      </small>
     </footer>
   </div>
 </template>
