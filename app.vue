@@ -28,9 +28,49 @@
     </main>
     <footer>
       <small>
-        Made with ❤️
+        Made with ❤️ &middot;
         <a href="https://github.com/danielroe/n3rdle">Contributions welcome</a>
       </small>
     </footer>
   </div>
 </template>
+
+<style>
+/* Blue-grey Light scheme (Default) */
+/* Can be forced with data-theme="light" */
+[data-theme='light'],
+:root:not([data-theme='dark']) {
+  --primary: #546e7a;
+  --primary-hover: #455a64;
+  --primary-focus: rgba(84, 110, 122, 0.125);
+  --primary-inverse: #fff;
+}
+
+/* Blue-grey Dark scheme (Auto) */
+/* Automatically enabled if user has Dark mode enabled */
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --primary: #546e7a;
+    --primary-hover: #607d8b;
+    --primary-focus: rgba(84, 110, 122, 0.25);
+    --primary-inverse: #fff;
+  }
+}
+
+/* Blue-grey Dark scheme (Forced) */
+/* Enabled if forced with data-theme="dark" */
+[data-theme='dark'] {
+  --primary: #546e7a;
+  --primary-hover: #607d8b;
+  --primary-focus: rgba(84, 110, 122, 0.25);
+  --primary-inverse: #fff;
+}
+
+/* Blue-grey (Common styles) */
+:root {
+  --form-element-active-border-color: var(--primary);
+  --form-element-focus-color: var(--primary-focus);
+  --switch-color: var(--primary-inverse);
+  --switch-checked-background-color: var(--primary);
+}
+</style>
