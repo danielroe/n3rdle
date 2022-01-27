@@ -2,6 +2,8 @@ const decode = (state = '[]'): GameState => JSON.parse(state)
 const encode = (state: GameState): string => JSON.stringify(state)
 
 export const useGameState = () => {
+  const router = useRouter()
+
   const state = useCookie<GameState>('state', {
     encode,
     decode,
@@ -15,5 +17,10 @@ export const useGameState = () => {
     })
   }
 
-  return { state, submitGuess }
+  function resetGame() {
+    state.value = []
+    router.push('/')
+  }
+
+  return { state, submitGuess, resetGame }
 }
