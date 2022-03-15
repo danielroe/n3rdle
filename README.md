@@ -5,8 +5,6 @@ This is a tiny, incomplete clone of Wordle built in [Nuxt 3](https://v3.nuxtjs.o
 <p align="center">
   <a href="https://n3rdle.vercel.app/" target="_blank">
     <img width="1090" alt="Screenshot of a Wordle game in progress" src="https://raw.githubusercontent.com/danielroe/n3rdle/376875b3966029f80f5ed765f994e5a3235214e5/screenshot.png">
-    <br>
-    Live Demo
   </a>
 </p>
 
