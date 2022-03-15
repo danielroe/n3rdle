@@ -12,7 +12,7 @@ This is a tiny, incomplete clone of Wordle built in [Nuxt 3](https://v3.nuxtjs.o
 
 <p align="center">
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/-U8NWGTGNVw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+https://www.youtube.com/watch?v=-U8NWGTGNVw
 
 </p>
 
