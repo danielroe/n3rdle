@@ -10,11 +10,11 @@ This is a tiny, incomplete clone of Wordle built in [Nuxt 3](https://v3.nuxtjs.o
   </a>
 </p>
 
-<p align="center">
-
-https://www.youtube.com/watch?v=-U8NWGTGNVw
-
-</p>
+<a href="https://www.youtube.com/watch?v=-U8NWGTGNVw" title="Vue.js Nation 2022 - Nuxt 3: From Zero to Hero">
+  <p align="center">
+    <img width="75%" src="https://img.youtube.com/vi/-U8NWGTGNVw/maxresdefault.jpg" alt="Vue.js Nation 2022 - Nuxt 3: From Zero to Hero Thumbnail"/>
+  </p>
+</a>
 
 ## Features
 
