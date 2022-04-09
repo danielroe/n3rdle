@@ -1,5 +1,18 @@
 <script setup lang="ts">
+import SimpleKeyboard from '../components/SimpleKeyboard.vue';
 const { state, submitGuess, resetGame } = useGameState()
+const input = ref('')
+
+function onChange(inputChange) {
+  input.value = inputChange
+  console.log("Input changed", input)
+}
+function onKeyPress(button) {
+  console.log("button", button)
+}
+function onInputChange(inputChange) {
+  input.value = inputChange.target.value
+}
 </script>
 
 <template>
@@ -17,6 +30,7 @@ const { state, submitGuess, resetGame } = useGameState()
     <section>
       <GameBoard :state="state" />
       <GuessForm @guess="submitGuess" />
+      <SimpleKeyboard :input="input" :keyboardClass="keyboardClass" />
       <button class="secondary outline" @click="resetGame">Reset game</button>
     </section>
   </div>
