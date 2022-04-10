@@ -2,10 +2,8 @@
   <div :class="keyboardClass"></div>
 </template>
 <script setup lang="ts">
-
 import Keyboard from "simple-keyboard";
 import "simple-keyboard/build/css/index.css";
-
 
 const props = defineProps({
   input: {
@@ -17,13 +15,11 @@ const props = defineProps({
       type: String
     },
 })
-onMounted(() => {
-  const keyboard = new Keyboard({
+
+const keyboard = new Keyboard({
   onChange: input => onChange(input),
   onKeyPress: button => onKeyPress(button)
 });
-})
-
 
 function onChange(input){
   input = this.input;
