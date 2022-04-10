@@ -26,9 +26,7 @@ export default defineHandle(async (req, res) => {
       message: 'Invalid guess, word not in word list',
     })
   }
-const stateWords = [].concat.apply([], state);
-
-if(stateWords.includes(guess))  { 
+if(state.some(([word]) => word === guess))  { 
     return createError({
       statusCode: 422,
       message: 'Invalid guess, word already guessed',
