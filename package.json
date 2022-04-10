@@ -10,8 +10,5 @@
     "nuxt-windicss": "^2.2.2",
     "nuxt3": "latest",
     "wordlist-english": "^1.2.1"
-  },
-  "dependencies": {
-    "simple-keyboard": "^3.4.78"
   }
 }
