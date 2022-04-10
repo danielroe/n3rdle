@@ -4,7 +4,6 @@ import MemoryDriver from 'unstorage/drivers/memory'
 
 import wordList from 'wordlist-english/index.js'
 const validWords = wordList['english/10'].filter(word => word.length === 5)
-//console.log(validWords)
 storage.mount('', MemoryDriver())
 
 const decode = (state = '[]'): GameState => JSON.parse(state)
