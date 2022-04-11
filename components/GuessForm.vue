@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const emit = defineEmits<{
   (event: 'guess', guess: string): void
+  (event: 'resetError'): void
 }>()
 const guess = ref('')
 </script>
@@ -15,6 +16,8 @@ const guess = ref('')
         minlength="5"
         maxlength="5"
         class="font-bold uppercase tracking-widest text-black bg-white"
+        @change="() => emit('resetError')"
+        @focus="() => emit('resetError')"
       />
       <button :disabled="guess.length !== 5" type="submit">Guess</button>
     </label>
