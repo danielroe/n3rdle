@@ -27,9 +27,8 @@ export default defineHandle(async (req, res) => {
       statusMessage: 'Invalid guess, word not in word list',
     })
   }
-const stateWords = [].concat.apply([], state);
 
-if(stateWords.includes(guess))  { 
+  if(state.some(([word]) => word === guess)) { 
     return createError({
       statusCode: 422,
       statusMessage: 'Invalid guess, word already guessed',
@@ -41,9 +40,7 @@ if(stateWords.includes(guess))  {
     (await storage.getItem(day)) ||
     validWords[Math.floor(Math.random() * validWords.length)]
 
-    
   await storage.setItem(day, word)
-
 
   state.push([guess, generateHint(word, guess)])
   setCookie(res, 'state', encode(state), {

@@ -3,11 +3,6 @@ const { state, error, submitGuess, resetGame } = useGameState()
 const input = ref()
 input.value = submitGuess
 
-function onKeyPress(button) {
-  console.log(submitGuess)
-  console.log(button)
-  console.log(submitGuess)
-}
 function resetError() {
   error.value = ''
 }
@@ -33,7 +28,6 @@ watch(error, () => {
     </details>
     <section>
       <GameBoard :state="state" />
-      <SimpleKeyboard :input="input" @onKeyPress="onKeyPress"/>
       <GuessError :error="error"/>
       <GuessForm @guess="submitGuess" @reset-error="resetError" />
       <button class="secondary outline" @click="resetGame">Reset game</button>
