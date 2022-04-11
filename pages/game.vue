@@ -1,18 +1,22 @@
 <script setup lang="ts">
-import SimpleKeyboard from '../components/SimpleKeyboard.vue';
-const { state, submitGuess, resetGame } = useGameState()
-const input = ref('')
+const { state, error, submitGuess, resetGame } = useGameState()
+const input = ref()
+input.value = submitGuess
 
-function onChange(inputChange) {
-  input.value = inputChange
-  console.log("Input changed", input)
-}
 function onKeyPress(button) {
-  console.log("button", button)
+  console.log(submitGuess)
+  console.log(button)
+  console.log(submitGuess)
 }
-function onInputChange(inputChange) {
-  input.value = inputChange.target.value
+function resetError() {
+  error.value = ''
 }
+watch(error, () => {
+  if (error) {
+    error.value = String(error.value).replace(' (/api/guess)', '')
+    error.value = String(error.value).replace('FetchError: 422 ', '')
+  }
+})
 </script>
 
 <template>
@@ -29,8 +33,9 @@ function onInputChange(inputChange) {
     </details>
     <section>
       <GameBoard :state="state" />
-      <GuessForm @guess="submitGuess" />
-      <SimpleKeyboard :input="input" :keyboardClass="keyboardClass" />
+      <SimpleKeyboard :input="input" @onKeyPress="onKeyPress"/>
+      <GuessError :error="error"/>
+      <GuessForm @guess="submitGuess" @reset-error="resetError" />
       <button class="secondary outline" @click="resetGame">Reset game</button>
     </section>
   </div>

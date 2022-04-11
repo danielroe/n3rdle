@@ -1,43 +1,41 @@
-<template>
-  <div :class="keyboardClass"></div>
-</template>
-<script setup lang="ts">
 
+<script setup lang="ts">
 import Keyboard from "simple-keyboard";
 import "simple-keyboard/build/css/index.css";
 
+defineProps<{
+  input: { type: String, required: true }
+}>()
 
-const props = defineProps({
-  input: {
-    type: String,
-    required: true
-  },
-  keyboardClass: {
-      default: "simple-keyboard",
-      type: String
-    },
-})
+const emit = defineEmits<{
+  (event: 'onKeyPress', button: string): void
+}>()
+
+let keyboard: Keyboard;
+
 onMounted(() => {
-  const keyboard = new Keyboard({
-  onChange: input => onChange(input),
-  onKeyPress: button => onKeyPress(button)
-});
+  keyboard = new Keyboard({
+    onKeyPress: onKeyPress
+  })
+  keyboard.addButtonTheme("1 2 3 4 5 6 7 8 9", "hg-red")
 })
 
-
-function onChange(input){
-  input = this.input;
-  console.log("Input changed", input);
-}
-
-function onKeyPress(button){
-  console.log("Button pressed", button);
+function onKeyPress(button) {
+  emit("onKeyPress", button)
 }
 
 </script>
-<style scoped>
-keyboardClass {
+<template>
+  <div class="simple-keyboard"></div>
+</template>
+<style scoped lang="css">
+.simple-keyboard {
   width: 100%;
   height: 100%;
+}
+
+.hidden-buttons {
+  display: none !important; 
+  visibility: collapse !important;
 }
 </style>
