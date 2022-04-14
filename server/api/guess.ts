@@ -4,7 +4,6 @@ import MemoryDriver from 'unstorage/drivers/memory'
 
 import wordList from 'wordlist-english/index.js'
 const validWords = wordList['english/10'].filter(word => word.length === 5)
-
 storage.mount('', MemoryDriver())
 
 const decode = (state = '[]'): GameState => JSON.parse(state)
@@ -14,7 +13,7 @@ export default defineHandle(async (req, res) => {
   const guess = (await useBody(req)).guess?.toLowerCase()
   const state: GameState = decode(useCookie(req, 'state'))
 
-  if (!guess || guess.length !== 5 ) {
+  if (!guess || guess.length !== 5) {
     return createError({
       statusCode: 422,
       statusMessage: 'Invalid guess, 5 letter words only',
@@ -28,7 +27,7 @@ export default defineHandle(async (req, res) => {
     })
   }
 
-  if(state.some(([word]) => word === guess)) { 
+  if (state.some(([word]) => word === guess)) {
     return createError({
       statusCode: 422,
       statusMessage: 'Invalid guess, word already guessed',
