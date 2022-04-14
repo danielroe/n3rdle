@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { state, submitGuess, resetGame } = useGameState()
+const { state, error, submitGuess, resetGame } = useGameState()
 </script>
 
 <template>
@@ -16,6 +16,7 @@ const { state, submitGuess, resetGame } = useGameState()
     </details>
     <section>
       <GameBoard :state="state" />
+      <GuessError :error="error" />
       <GuessForm @guess="submitGuess" />
       <button class="secondary outline" @click="resetGame">Reset game</button>
     </section>

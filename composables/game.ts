@@ -3,6 +3,7 @@ const encode = (state: GameState): string => JSON.stringify(state)
 
 export const useGameState = () => {
   const router = useRouter()
+  const error = ref('')
 
   const state = useCookie<GameState>('state', {
     encode,
@@ -11,10 +12,18 @@ export const useGameState = () => {
   })
 
   async function submitGuess(guess: string) {
-    state.value = await $fetch('/api/guess', {
-      method: 'POST',
-      body: { guess },
-    })
+    error.value = ''
+    try {
+      state.value = await $fetch('/api/guess', {
+        method: 'POST',
+        body: { guess },
+      })
+    } catch (e) {
+      error.value = (e.message || e.toString())
+        .replace(' (/api/guess)', '')
+        .replace('422 ', '')
+        .replace('FetchError: ', '')
+    }
   }
 
   function resetGame() {
@@ -22,5 +31,5 @@ export const useGameState = () => {
     router.push('/')
   }
 
-  return { state, submitGuess, resetGame }
+  return { state, error, submitGuess, resetGame }
 }

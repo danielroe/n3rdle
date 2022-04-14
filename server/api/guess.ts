@@ -16,21 +16,21 @@ export default defineHandle(async (req, res) => {
   if (!guess || guess.length !== 5) {
     return createError({
       statusCode: 422,
-      message: 'Invalid guess, 5 letter words only',
+      statusMessage: 'Invalid guess, 5 letter words only',
     })
   }
 
   if (!validWords.includes(guess)) {
     return createError({
       statusCode: 422,
-      message: 'Invalid guess, word not in word list',
+      statusMessage: 'Invalid guess, word not in word list',
     })
   }
 
   if (state.some(([word]) => word === guess)) {
     return createError({
       statusCode: 422,
-      message: 'Invalid guess, word already guessed',
+      statusMessage: 'Invalid guess, word already guessed',
     })
   }
 
