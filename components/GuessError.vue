@@ -6,7 +6,8 @@ defineProps({
 
 <template>
   <div
-    class="bg-red-500 gray-50 border-0 border-white pl-1 mt-4 text-white font-bold"
+    :class="{ 'bg-red-500': !!error }"
+    class="px-2 py-1 my-2 text-white font-bold min-h-8"
   >
     {{ error }}
   </div>
