@@ -28,7 +28,7 @@ watch(error, () => {
     </details>
     <section>
       <GameBoard :state="state" />
-      <GuessError :error="error"/>
+      <GuessError :error="error" />
       <GuessForm @guess="submitGuess" @reset-error="resetError" />
       <button class="secondary outline" @click="resetGame">Reset game</button>
     </section>

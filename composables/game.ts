@@ -12,12 +12,12 @@ export const useGameState = () => {
   })
 
   async function submitGuess(guess: string) {
-    try{
+    try {
       state.value = await $fetch('/api/guess', {
         method: 'POST',
         body: { guess },
       })
-    } catch(e) {
+    } catch (e) {
       error.value = e
     }
   }
