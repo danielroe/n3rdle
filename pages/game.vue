@@ -1,17 +1,5 @@
 <script setup lang="ts">
 const { state, error, submitGuess, resetGame } = useGameState()
-const input = ref()
-input.value = submitGuess
-
-function resetError() {
-  error.value = ''
-}
-watch(error, () => {
-  if (error) {
-    error.value = String(error.value).replace(' (/api/guess)', '')
-    error.value = String(error.value).replace('FetchError: 422 ', '')
-  }
-})
 </script>
 
 <template>
@@ -29,7 +17,7 @@ watch(error, () => {
     <section>
       <GameBoard :state="state" />
       <GuessError :error="error" />
-      <GuessForm @guess="submitGuess" @reset-error="resetError" />
+      <GuessForm @guess="submitGuess" />
       <button class="secondary outline" @click="resetGame">Reset game</button>
     </section>
   </div>
