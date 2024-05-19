@@ -514,7 +514,7 @@
     webpack-virtual-modules "^0.4.3"
     webpackbar "^5.0.2"
 
-"@picocss/pico@^1.4.4":
+"@picocss/pico@1.4.4":
   version "1.4.4"
   resolved "https://registry.yarnpkg.com/@picocss/pico/-/pico-1.4.4.tgz#7d588ed8df26d261b53e26273f18080b58415f1d"
   integrity sha512-MuL4MOY1Tugf91N06mhYETVqMiNeT9gObMJ0WNrnbSGBw61gsqXzn7ScjXvVpnQmFC8DP13mluzz1s+ogpiuEQ==
@@ -3797,7 +3797,7 @@ number-is-nan@^1.0.0:
   optionalDependencies:
     fsevents "~2.3.2"
 
-nuxt-windicss@^2.2.2:
+nuxt-windicss@2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/nuxt-windicss/-/nuxt-windicss-2.2.2.tgz#22c1129376b4f33366dbb4f8abc82f2cd7a67fea"
   integrity sha512-4tvzk9d2TUFxloty187D+wmO8ZNAvpSmRJ5HQO3/AvZdMMhAl4gomXR9fCgFKQe7Fxcj9nIKNInOx8TWowjiqA==
@@ -5539,7 +5539,7 @@ windicss@^3.4.0, windicss@^3.4.2, windicss@^3.4.3:
   resolved "https://registry.yarnpkg.com/windicss/-/windicss-3.4.3.tgz#347d09fee8eb6b3fc5e6e68b435c76ccb24a748c"
   integrity sha512-UnugThsvEgy8RsPm4/B5DYMCAqvZzD6yWU7Anh+f07t5RSJ8zvmAylGLbXrHPJEmCKzo2Mf+fOUvISH7IJqM3A==
 
-wordlist-english@^1.2.1:
+wordlist-english@1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/wordlist-english/-/wordlist-english-1.2.1.tgz#7a76da3c7ac26919d80d1a54056c796830febdf7"
   integrity sha512-vaiQQiu95UeON0WZFtiTrWfZmIiUd2rhrhMCBeEzwq3oTVzHCX8naGCqv/smSspE9kH2sN+E8lZyV0JZjqSzGw==
