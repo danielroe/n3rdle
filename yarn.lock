@@ -514,10 +514,10 @@
     webpack-virtual-modules "^0.4.3"
     webpackbar "^5.0.2"
 
-"@picocss/pico@^1.4.4":
-  version "1.4.4"
-  resolved "https://registry.yarnpkg.com/@picocss/pico/-/pico-1.4.4.tgz#7d588ed8df26d261b53e26273f18080b58415f1d"
-  integrity sha512-MuL4MOY1Tugf91N06mhYETVqMiNeT9gObMJ0WNrnbSGBw61gsqXzn7ScjXvVpnQmFC8DP13mluzz1s+ogpiuEQ==
+"@picocss/pico@^2.0.0":
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/@picocss/pico/-/pico-2.0.6.tgz#16e6d253366ab245e67bac6faa95a45edcac4124"
+  integrity sha512-/d8qsykowelD6g8k8JYgmCagOIulCPHMEc2NC4u7OjmpQLmtSetLhEbt0j1n3fPNJVcrT84dRp0RfJBn3wJROA==
 
 "@polka/url@^1.0.0-next.20":
   version "1.0.0-next.21"
