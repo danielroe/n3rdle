@@ -6,9 +6,9 @@
     "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
-    "@picocss/pico": "^1.4.4",
-    "nuxt-windicss": "^2.2.2",
+    "@picocss/pico": "1.4.4",
+    "nuxt-windicss": "2.2.2",
     "nuxt3": "latest",
-    "wordlist-english": "^1.2.1"
+    "wordlist-english": "1.2.1"
   }
 }
