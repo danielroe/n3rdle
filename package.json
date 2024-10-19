@@ -6,10 +6,10 @@
     "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
-    "@picocss/pico": "^2.0.6",
-    "nuxt": "latest",
-    "nuxt-windicss": "^3.0.1",
-    "unstorage": "^1.12.0",
-    "wordlist-english": "^1.2.1"
+    "@picocss/pico": "2.0.6",
+    "nuxt": "3.13.2",
+    "nuxt-windicss": "3.0.1",
+    "unstorage": "1.12.0",
+    "wordlist-english": "1.2.1"
   }
 }
