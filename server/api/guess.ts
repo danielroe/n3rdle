@@ -1,34 +1,37 @@
-import { createError, defineHandle, useCookie, setCookie, useBody } from 'h3'
-import { storage } from '#storage'
+import { createError, defineEventHandler, getCookie, setCookie, readBody } from 'h3'
 import MemoryDriver from 'unstorage/drivers/memory'
 
+// @ts-expect-error invalid types
 import wordList from 'wordlist-english/index.js'
+
 const validWords = wordList['english/10'].filter(word => word.length === 5)
+
+const storage = useStorage()
 storage.mount('', MemoryDriver())
 
 const decode = (state = '[]'): GameState => JSON.parse(state)
 const encode = (state: GameState): string => JSON.stringify(state)
 
-export default defineHandle(async (req, res) => {
-  const guess = (await useBody(req)).guess?.toLowerCase()
-  const state: GameState = decode(useCookie(req, 'state'))
+export default defineEventHandler(async (event) => {
+  const guess = (await readBody(event)).guess?.toLowerCase()
+  const state: GameState = decode(getCookie(event, 'state'))
 
   if (!guess || guess.length !== 5) {
-    return createError({
+    throw createError({
       statusCode: 422,
       statusMessage: 'Invalid guess, 5 letter words only',
     })
   }
 
   if (!validWords.includes(guess)) {
-    return createError({
+    throw createError({
       statusCode: 422,
       statusMessage: 'Invalid guess, word not in word list',
     })
   }
 
   if (state.some(([word]) => word === guess)) {
-    return createError({
+    throw createError({
       statusCode: 422,
       statusMessage: 'Invalid guess, word already guessed',
     })
@@ -42,7 +45,7 @@ export default defineHandle(async (req, res) => {
   await storage.setItem(day, word)
 
   state.push([guess, generateHint(word, guess)])
-  setCookie(res, 'state', encode(state), {
+  setCookie(event, 'state', encode(state), {
     path: '/',
     maxAge: 60 * 60 * 24,
     sameSite: false,
@@ -53,7 +56,7 @@ export default defineHandle(async (req, res) => {
 })
 
 function generateHint(word: string, guess: string): string {
-  const source = [...word]
+  const source: Array<string | null> = [...word]
   return [...guess]
     .map((letter, i) => {
       if (letter === word[i]) {
