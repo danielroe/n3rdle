@@ -12,5 +12,5 @@
     "unstorage": "1.14.4",
     "wordlist-english": "1.2.1"
   },
-  "packageManager": "pnpm@9.15.1"
+  "packageManager": "pnpm@9.15.2"
 }
