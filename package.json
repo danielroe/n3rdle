@@ -7,7 +7,7 @@
   },
   "devDependencies": {
     "@picocss/pico": "2.0.6",
-    "nuxt": "3.15.0",
+    "nuxt": "3.15.1",
     "nuxt-windicss": "3.0.1",
     "unstorage": "1.14.4",
     "wordlist-english": "1.2.1"
