@@ -9,7 +9,7 @@
     "@picocss/pico": "2.0.6",
     "nuxt": "3.15.4",
     "nuxt-windicss": "3.0.1",
-    "unstorage": "1.14.4",
+    "unstorage": "1.15.0",
     "wordlist-english": "1.2.1"
   },
   "packageManager": "pnpm@10.4.1"
